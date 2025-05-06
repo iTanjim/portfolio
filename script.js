@@ -28,6 +28,13 @@ const header2 = document.querySelector(".header-2");
 const navBubble = document.querySelector(".nav-bubble");
 const listItems = document.querySelectorAll(".nav ul li");
 const navigation = document.querySelector(".nav ul");
+const toProjectBtns = document.querySelectorAll(".project-title button");
+const toProjectBtnSliders = document.querySelectorAll(
+  ".project-title button div"
+);
+
+
+
 const stickyHeight = window.innerHeight;
 
 const cubesFaces = document.querySelectorAll(".cube > div");

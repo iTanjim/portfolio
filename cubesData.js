@@ -1,111 +1,111 @@
 export const cubesData = {
-    "cube-1": {
-        initial: {
-            top: -75,
-            left: 45,
-            rotateX: -48,
-            rotateY: -360,
-            rotateZ: -50,
-            z: -30000,
-        },
-        final: {
-            top: 50,
-            left: 15,
-            rotateX: 90.7,
-            rotateY: 0,
-            rotateZ: -3,
-            z: 0,
-        }
+  "cube-1": {
+    initial: {
+      top: -75,
+      left: 45,
+      rotateX: -48,
+      rotateY: -360,
+      rotateZ: -50,
+      z: -30000,
     },
-    "cube-2": {
-        initial: {
-            top: -75,
-            left: 53,
-            rotateX: -360,
-            rotateY: -48,
-            rotateZ: -50,
-            z: -30000,
-        },
-        final: {
-            top: 75,
-            left: 25,
-            rotateX: 2,
-            rotateY: 92,
-            rotateZ: 0,
-            z: 0,
-        }
+    final: {
+      top: 50,
+      left: 15,
+      rotateX: 90.7,
+      rotateY: 0,
+      rotateZ: -4,
+      z: 0,
     },
-    "cube-3": {
-        initial: {
-            top: -75,
-            left: 60,
-            rotateX: -30,
-            rotateY: 360,
-            rotateZ: -40,
-            z: -30000,
-        },
-        final: {
-            top: 50,
-            left: 85,
-            rotateX: -.7,
-            rotateY: -93,
-            rotateZ: 0,
-            z: 0,
-        }
+  },
+  "cube-2": {
+    initial: {
+      top: -75,
+      left: 53,
+      rotateX: -360,
+      rotateY: -48,
+      rotateZ: -50,
+      z: -30000,
     },
-    "cube-4": {
-        initial: {
-            top: -56,
-            left: 53,
-            rotateX: 45,
-            rotateY: -360,
-            rotateZ: -48,
-            z: -30000,
-        },
-        final: {
-            top: 75,
-            left: 75,
-            rotateX: 1,
-            rotateY:-182,
-            rotateZ: 0,
-            z: 0,
-        }
+    final: {
+      top: 75,
+      left: 25,
+      rotateX: 2,
+      rotateY: 92,
+      rotateZ: 0,
+      z: 0,
     },
-    "cube-5": {
-        initial: {
-            top: -40,
-            left: 53,
-            rotateX: 90,
-            rotateY: -100,
-            rotateZ: -360,
-            z: -30000,
-        },
-        final: {
-            top: 25,
-            left: 25,
-            rotateX: -1,
-            rotateY: 2,
-            rotateZ: 0,
-            z: 0,
-        }
+  },
+  "cube-3": {
+    initial: {
+      top: -75,
+      left: 60,
+      rotateX: -30,
+      rotateY: 360,
+      rotateZ: -40,
+      z: -30000,
     },
-    "cube-6": {
-        initial: {
-            top: -25,
-            left: 53,
-            rotateX: -90,
-            rotateY: -360,
-            rotateZ: -30,
-            z: -30000,
-        },
-        final: {
-            top: 25,
-            left: 75,
-            rotateX: -91,
-            rotateY: 0,
-            rotateZ: -2,
-            z: 0,
-        }
-    }
+    final: {
+      top: 50,
+      left: 85,
+      rotateX: -0.7,
+      rotateY: -93,
+      rotateZ: 0,
+      z: 0,
+    },
+  },
+  "cube-4": {
+    initial: {
+      top: -56,
+      left: 53,
+      rotateX: 45,
+      rotateY: -360,
+      rotateZ: -48,
+      z: -30000,
+    },
+    final: {
+      top: 75,
+      left: 75,
+      rotateX: 1,
+      rotateY: -182,
+      rotateZ: 0,
+      z: 0,
+    },
+  },
+  "cube-5": {
+    initial: {
+      top: -40,
+      left: 53,
+      rotateX: 90,
+      rotateY: -100,
+      rotateZ: -360,
+      z: -30000,
+    },
+    final: {
+      top: 25,
+      left: 25,
+      rotateX: -1,
+      rotateY: 2,
+      rotateZ: 0,
+      z: 0,
+    },
+  },
+  "cube-6": {
+    initial: {
+      top: -25,
+      left: 53,
+      rotateX: -90,
+      rotateY: -360,
+      rotateZ: -30,
+      z: -30000,
+    },
+    final: {
+      top: 25,
+      left: 75,
+      rotateX: -91,
+      rotateY: 0,
+      rotateZ: -2,
+      z: 0,
+    },
+  },
 };
 
