@@ -38,26 +38,33 @@ const toProjectBtnSliders = document.querySelectorAll(
 const stickyHeight = window.innerHeight;
 
 const cubesFaces = document.querySelectorAll(".cube > div");
-const cubes = document.querySelectorAll(".cubes > .cube")
+const cubes = document.querySelectorAll(".cubes > .cube");
 let isScrolling;
 let lastProgress;
 let itemNum = 1;
 
-const stack = ['HTML', 'TAILWIND CSS', 'REACT', 'NODE.JS', 'BOOTSTRAP' ,'JAVASCRIPT']
+const stack = [
+  "HTML",
+  "TAILWIND CSS",
+  "REACT",
+  "NODE.JS",
+  "BOOTSTRAP",
+  "JAVASCRIPT",
+];
 
 cubes.forEach((cube) => {
-  console.log(cube.children)
+  console.log(cube.children);
   Array.from(cube.children).forEach((face, index) => {
     const img = document.createElement("img");
-    const p = document.createElement("p")
-    p.innerText = stack[index]
-    img.src= `./assets/images/stack${index + 1}.png`;
-    face.style.background = "black"
-    face.appendChild(img)
+    const p = document.createElement("p");
+    p.innerText = stack[index];
+    img.src = `./assets/images/stack${index + 1}.png`;
+    face.style.background = "black";
+    face.appendChild(img);
     face.appendChild(p);
-  })
-})
-const stackName = document.querySelectorAll(".cube > div > p")
+  });
+});
+const stackName = document.querySelectorAll(".cube > div > p");
 
 listItems.forEach((item) => {
   item.addEventListener("mouseenter", () => {
@@ -65,46 +72,51 @@ listItems.forEach((item) => {
       left: item.offsetLeft,
       width: item.offsetWidth,
       opacity: 1,
-      duration: .3,
-    })
-  })
-})
+      duration: 0.3,
+    });
+  });
+});
 
-navigation.addEventListener('mouseleave', () => {
-    gsap.to(navBubble, {
-      left: -100,
-      width: 0,
-      duration: .5,
-      opacity: 0,
-    })
-})
-
+navigation.addEventListener("mouseleave", () => {
+  gsap.to(navBubble, {
+    left: -100,
+    width: 0,
+    duration: 0.5,
+    opacity: 0,
+  });
+});
 
 const interpolate = (start, end, progress) => {
   return start + (end - start) * progress;
-}
+};
 
 ScrollTrigger.create({
   trigger: stickySection,
   start: "top top",
-  end:`+=${stickyHeight}px`,
+  end: `+=${stickyHeight}px`,
   scrub: 1,
   pin: true,
+  pinType: "transform",
   pinSpacing: true,
   onUpdate: (self) => {
     const initialProgress = Math.min(self.progress * 20, 1);
-    logo.style.filter = `blur(${interpolate(0, 20, initialProgress)}px)`
+    logo.style.filter = `blur(${interpolate(0, 20, initialProgress)}px)`;
 
-    const logoOpacityProgress = self.progress >= 0.02? Math.min((self.progress - 0.02) * 100,1)
- : 0;
+    const logoOpacityProgress =
+      self.progress >= 0.02 ? Math.min((self.progress - 0.02) * 100, 1) : 0;
     logo.style.opacity = 1 - logoOpacityProgress;
 
-    const cubesOpacityProgress = self.progress > 0.01 ? Math.min((self.progress - 0.01) * 100, 1) : 0;
+    const cubesOpacityProgress =
+      self.progress > 0.01 ? Math.min((self.progress - 0.01) * 100, 1) : 0;
     cubesContainer.style.opacity = cubesOpacityProgress;
 
     const header1Progress = Math.min(self.progress * 2.5, 1);
-    header1.style.transform = `translate(-50%, -50%)scale(${interpolate(1,1.5,FileSystemDirectoryHandle)})`;
-    header1.style.filter = `blur(${interpolate(0,20, header1Progress)}px)`;
+    header1.style.transform = `translate(-50%, -50%)scale(${interpolate(
+      1,
+      1.5,
+      header1Progress
+    )})`;
+    header1.style.filter = `blur(${interpolate(0, 20, header1Progress)}px)`;
     header1.style.opacity = 1 - header1Progress;
 
     const header2StartProgress = (self.progress - 0.4) * 10;
@@ -114,64 +126,81 @@ ScrollTrigger.create({
 
     stackName.forEach((item) => {
       item.style.opacity = header2Progress;
-  })
-    
+    });
+
     header2.style.transform = `translate(-50%, -50%)scale(${header2Scale})`;
     header2.style.opacity = header2Progress;
     header2.style.filter = `blur(${header2Blur})`;
 
-
-
-
-
     const firstPhaseProgress = Math.min(self.progress * 2, 1);
-    const secondPhaseProgress = self.progress >= 0.5 ? (self.progress - 0.5) * 2 :0;
-
+    const secondPhaseProgress =
+      self.progress >= 0.5 ? (self.progress - 0.5) * 2 : 0;
 
     Object.entries(cubesData).forEach(([cubeClass, data]) => {
       const cube = document.querySelector(`.${cubeClass}`);
-      const {initial , final} = data;
+      const { initial, final } = data;
 
-      const currentTop = interpolate(initial.top, final.top, firstPhaseProgress);
-      const currentLeft = interpolate(initial.left, final.left, firstPhaseProgress);
-      const currentRotateX = interpolate(initial.rotateX, final.rotateX, firstPhaseProgress);
-      const currentRotateY = interpolate(initial.rotateY, final.rotateY, firstPhaseProgress);
-      const currentRotateZ = interpolate(initial.rotateZ, final.rotateZ, firstPhaseProgress);
+      const currentTop = interpolate(
+        initial.top,
+        final.top,
+        firstPhaseProgress
+      );
+      const currentLeft = interpolate(
+        initial.left,
+        final.left,
+        firstPhaseProgress
+      );
+      const currentRotateX = interpolate(
+        initial.rotateX,
+        final.rotateX,
+        firstPhaseProgress
+      );
+      const currentRotateY = interpolate(
+        initial.rotateY,
+        final.rotateY,
+        firstPhaseProgress
+      );
+      const currentRotateZ = interpolate(
+        initial.rotateZ,
+        final.rotateZ,
+        firstPhaseProgress
+      );
       const currentZ = interpolate(initial.z, final.z, firstPhaseProgress);
 
-      if(cube){
+      if (cube) {
         cube.style.top = `${currentTop}%`;
         cube.style.left = `${currentLeft}%`;
-        cube.style.transform = `translate3d(-50%, -50%,${currentZ}px) rotateX(${currentRotateX}deg)rotateY(${currentRotateY}deg)rotateZ(${currentRotateZ}deg)`
+        cube.style.transform = `translate3d(-50%, -50%,${currentZ}px) rotateX(${currentRotateX}deg)rotateY(${currentRotateY}deg)rotateZ(${currentRotateZ}deg)`;
       }
-    })
+    });
 
     const progress = self.progress;
-    lastProgress = progress; 
+    lastProgress = progress;
 
-   
-    
-    
     clearTimeout(isScrolling);
 
-    
     isScrolling = setTimeout(() => {
       const scrollToY = window.scrollY;
       const triggerStart = self.start;
       const triggerEnd = self.end;
-        // console.log(triggerEnd, progress);
-      if(progress !== 1){
-        
+      // console.log(triggerEnd, progress);
+      if (progress !== 1) {
         if (progress >= 0.35) {
           // Scroll to end of sticky section
-          lenis.scrollTo(triggerEnd, { duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 1) });
+          lenis.scrollTo(triggerEnd, {
+            duration: 1.2,
+            easing: (t) => 1 - Math.pow(1 - t, 1),
+          });
         } else {
           // Scroll to start of sticky section
-          lenis.scrollTo(triggerStart, { duration: 1.2, easing: (t) => 1 - Math.pow(1 - t, 3) });
+          lenis.scrollTo(triggerStart, {
+            duration: 1.2,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
+          });
         }
       }
     }, 150);
-  }
+  },
 });
 
 

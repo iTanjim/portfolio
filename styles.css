@@ -42,15 +42,16 @@ a:visited, a{
 
 html{
     font-size: 62.5%;
+    width: 100%;
 }
 body{
     position: relative;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     background-color: #121212;
     font-family: var(--eaves-font);
     font-size: 1.8rem;
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: auto;
 }
@@ -111,6 +112,7 @@ img{
 section {
     position: relative;
     left: 0;
+    top: 0;
     width: 100vw;
     height: 100vh;
     /* overflow: hidden; */
@@ -329,7 +331,7 @@ section {
     width: 85%;
     border-radius: 100px;
     margin: 0 auto;
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
 }
 .projects > .section-title{
     width: 70rem;
@@ -437,12 +439,25 @@ section {
 
 footer{
     background-color: #121212;
-    color: white;
+    color: var(--dark-white);
+    height: fit-content;
+    margin-bottom: 2rem;
 }
 
 .footer-cont{
-    width: 70%;
+    width: 40%;
     margin: 0 auto;
-    border: 1px solid red;
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: 7px;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-contacts{
+    display: flex;
+    flex-direction: column;
+}
+.footer-copy{
+    color: rgba(255,255,255,0.4);
 }
