@@ -368,13 +368,13 @@ section {
     background-color: #121212;
     color: var(--dark-white);
 }
-.experience-wrapper h1{
+/* .experience-wrapper h1{
     font-size: 3rem;
     font-weight: 400;
     text-align: start;
     width: 69rem;
     margin: 2rem auto;
-}
+} */
 
 .experience-brief .experience {
     position: relative;
@@ -403,9 +403,13 @@ section {
     border: 1px solid rgba(255,255,255,0.6);
     background-color: black;
     border-radius: 50%;
+    overflow: hidden;
 }
 .work-logo img {
     border-radius: inherit;
+    width: 100%;
+    will-change: transform;
+    transform: translateY(0);
 }
 
 
@@ -427,7 +431,7 @@ section {
     margin: 0 auto;
     background-color: var(--color-accent);
 }
-.projects > .section-title{
+.section-title{
     width: 70rem;
     text-align: start;
     font-weight: 300;
@@ -437,7 +441,7 @@ section {
 
 .projects-wrapper{
     width: 70rem;
-    height: 85rem;
+    height: 95rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -465,13 +469,17 @@ section {
 .project-img-container{
     position: relative;
     width: 100%;
-    height: 45%;
+    height: 55%;
+    overflow: hidden;
     img{
+        display: block;
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        will-change: transform;
+        transform: translateY(0);
         /* display: none; */
     }
 }

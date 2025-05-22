@@ -4,6 +4,9 @@ import {cubesData} from "./cubesData.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
 // Initialize a new Lenis instance for smooth scrolling
 const lenis = new Lenis();
 
@@ -33,6 +36,27 @@ const toProjectBtnSliders = document.querySelectorAll(
   ".project-title button div"
 );
 
+
+// const experienceSection = document.querySelector(".vert-timeline-wrapper");
+// const experience = document.querySelectorAll(".experience");
+
+
+//   let split = SplitText.create(".experience", {
+//   type: "words",
+//   lineClass: 'line',
+// })
+// gsap.from(split.words, {
+//   scrollTrigger: {
+//     trigger: experienceSection,
+//     start: "bottom 25%",
+//     toggleActions: "play none none reverse",
+//     markers: true,
+//   },
+//   x: 100,
+//   autoAlpha:0,
+//   stagger: 0.05,
+//   duration: .2,
+// })
 
 
 const stickyHeight = window.innerHeight;
@@ -175,5 +199,26 @@ ScrollTrigger.create({
   }
 });
 
+ gsap.utils.toArray('.project-img-container').forEach(container => {
+    const img = container.querySelector('img');
+    if (!img) return;
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: 'top bottom',
+        end:   'bottom top',
+        scrub: true,
+        // markers: true,   // enable while tweaking
+      }
+    })
+    .fromTo(img,
+      { yPercent: -20, scale: 1.15, ease: 'none' },
+      { yPercent:  20, scale: 1.15, ease: 'none' }
+    );
+  });
+
+
+  ScrollTrigger.refresh();
 
 });
